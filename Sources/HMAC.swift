@@ -44,11 +44,11 @@ final public class HMAC<Variant: HashProtocol> {
         return authenticate(message: [UInt8](msg.utf8), withKey: key)
     }
     
-    public static func authenticate(message msg: NSData, withKey key: NSData) -> NSData {
-        return NSData(bytes: authenticate(message: msg.byteArray, withKey: key.byteArray))
+    public static func authenticate(message msg: Data, withKey key: Data) -> Data {
+        return Data(bytes: authenticate(message: msg.byteArray, withKey: key.byteArray))
     }
     
-    public static func authenticate(message msg: String, withKey key: NSData) -> NSData {
-        return NSData(bytes: authenticate(message: [UInt8](msg.utf8), withKey: key.byteArray))
+    public static func authenticate(message msg: String, withKey key: Data) -> Data {
+        return Data(bytes: authenticate(message: [UInt8](msg.utf8), withKey: key.byteArray))
     }
 }
